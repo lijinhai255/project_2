@@ -1,0 +1,9 @@
+sudo docker run --detach \
+  --hostname 124.71.28.13 \
+  --publish 13800:80 --publish 13822:22 \
+  --name gitlab \
+  --restart always \
+  --volume /srv/gitlab/config:/etc/gitlab \
+  --volume /srv/gitlab/logs:/var/log/gitlab \
+  --volume /srv/gitlab/data:/var/opt/gitlab \
+  gitlab/gitlab-ce:latest
